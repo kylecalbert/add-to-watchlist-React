@@ -24,3 +24,12 @@
     display: inline-block;
     margin-right: 30px;
   }
+
+.links{
+  text-decoration: none;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+
+}
+  
