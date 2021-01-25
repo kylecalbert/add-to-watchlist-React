@@ -1,12 +1,8 @@
 import './App.css';
-import React, {useEffect,useState} from 'react';
-import Header from './components/Header';
-
-import {BrowserRouter as Router,Route,} from "react-router-dom";
-
-import{GlobalProvider} from './components/context/GlobalState'
+import React, {useEffect,useState,useContext} from 'react';
 
 import Movie from './components/Movie';
+
 
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
 
@@ -16,6 +12,7 @@ function App() {
   const[search, setSearch] = useState(" ");
   const SEARCH_API = `https://api.themoviedb.org/3/search/movie?${process.env.REACT_APP_API}&language=en-US&query=${search}&page=1&include_adult=false`
 
+  console.log("THIS IS THE NEW WATCHLIST")
 
 
 
@@ -30,9 +27,7 @@ function App() {
     const data = await response.json();
     setMovies(data.results)  //DATA IS NOW IN MOVIES, SET MOVIES UPDATES THE MOVIES
     
-    console.log("These are movie result")
-    console.log(data.results)
-
+   
 
 
 
@@ -63,23 +58,15 @@ function App() {
 
   }
 
-  
-
-       console.log(movies)
 
   return (
 
    
     <div className="App">
-      <GlobalProvider>
-       <Router>
        <form onSubmit={handleOnSubmit} >
       <input type="text" className="search" onChange={handleOnChange} value ={search} placeholder="search"/>
       </form>
-      <Header/>
-
-  
-       <Route exact path="/">
+   
       
 
       <div className="movie-container">
@@ -90,16 +77,9 @@ function App() {
       </div>       {/* putting the images and titles etc in container */}
 
      
-       </Route>
-
-       <Route path="/watchlist">
-       </Route>
 
 
 
-       </Router>
-
-       </GlobalProvider>
 
     </div>
   );

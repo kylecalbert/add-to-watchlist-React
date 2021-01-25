@@ -1,7 +1,6 @@
-import React, {useContext} from "react"
+import React from "react"
 import'./Movie.css';
 
-import {GlobalContext} from './context/GlobalState';
 
 const setVoteClass = (vote) =>{
     if(vote>=8){
@@ -20,11 +19,6 @@ const setVoteClass = (vote) =>{
 
 const IMG_API = "https://image.tmdb.org/t/p/w500/"  
 function Movie({movie}) {
-    const {addMovieToWatchList,watchlist} = useContext(GlobalContext); 
-    let storedMovie = watchlist.find((element => element.id===movie.id))   // how does this function work?
-    const watchlistDisabled = storedMovie? true:false
-
-
     return (
         <div className="movie">
             <img className="movie-image" src={IMG_API+movie.poster_path} alt={movie.title}/>
@@ -37,7 +31,6 @@ function Movie({movie}) {
             <div className="movie-overflow">
                 <h2>Overview</h2>
                 <p>{movie.overview}</p>
-                <button disabled = {watchlistDisabled} className = "watchlist-btn" onClick={() => addMovieToWatchList(movie)}>Add to watchlist</button>          
 
             </div>
 
