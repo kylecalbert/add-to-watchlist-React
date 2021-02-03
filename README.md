@@ -1,1 +1,3 @@
 This app will be able to search movies using a search functionality. User will be able to see the description and rating of the movie.
+
+<div style="height: 0; padding-bottom: calc(51.19%); position:relative; width: 100%;"><iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/601ab553f3965d004df07c1d" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%"></iframe></div><p style="font-size: 12px; text-align: right;">Content made on <a href="https://www.kapwing.com/videos/601ab553f3965d004df07c1d" target="_blank" rel="noopener noreferrer">Kapwing</a></p>
