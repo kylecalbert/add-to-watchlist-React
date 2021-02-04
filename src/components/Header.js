@@ -8,6 +8,11 @@ function Header() {
       <header className="header">
         <ul className="nav-links">
           <li>
+            <Link className="links" to="/">
+              Featured
+            </Link>
+          </li>
+          <li>
             <Link className="links" to="/watchlist">
               WatchList
             </Link>

@@ -20,30 +20,32 @@ function Movie({ movie }) {
   const watchlistDisabled = storedMovie ? true : false;
 
   return (
-    <div className="movie">
-      <img
-        className="movie-image"
-        src={IMG_API + movie.poster_path}
-        alt={movie.title}
-      />
+    <div>
+      <div className="movie">
+        <img
+          className="movie-image"
+          src={IMG_API + movie.poster_path}
+          alt={movie.title}
+        />
 
-      <div className="movie-info">
-        <h3>{movie.title}</h3>
-        <span className={`tag ${setVoteClass(movie.vote_average)}`}>
-          {movie.vote_average}
-        </span>
-      </div>
-      
-      <div className="movie-overflow">
-        <h2>Overview</h2>
-        <p>{movie.overview}</p>
-        <button
-          disabled={watchlistDisabled}
-          className="watchlist-btn"
-          onClick={() => addMovieToWatchList(movie)}
-        >
-          Add to watchlist
-        </button>
+        <div className="movie-info">
+          <h3>{movie.title}</h3>
+          <span className={`tag ${setVoteClass(movie.vote_average)}`}>
+            {movie.vote_average}
+          </span>
+        </div>
+
+        <div className="movie-overflow">
+          <h2>Overview</h2>
+          <p>{movie.overview}</p>
+          <button
+            disabled={watchlistDisabled}
+            className="watchlist-btn"
+            onClick={() => addMovieToWatchList(movie)}
+          >
+            Add to watchlist
+          </button>
+        </div>
       </div>
     </div>
   );

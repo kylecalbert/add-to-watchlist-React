@@ -2,6 +2,10 @@
   display: flex; /* so that the data is in columns */
   flex-wrap: wrap;
 }
+.heading-ctrl {
+  margin-left: 25px;
+  color: aliceblue;
+}
 body {
   background-color: #22254b;
   margin: 0;

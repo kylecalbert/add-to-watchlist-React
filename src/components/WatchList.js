@@ -15,9 +15,7 @@ const setVoteClass = (vote) => {
   }
 };
 function WatchList() {
-  const { watchlist } = useContext(GlobalContext);
-  console.log("PRINT");
-  console.log(watchlist);
+  const { removeMovieFromWatchList, watchlist } = useContext(GlobalContext);
   return (
     <div className="movie-container">
       {watchlist.map((movies) => (
@@ -38,6 +36,12 @@ function WatchList() {
           <div className="movie-overflow">
             <h2>Overview</h2>
             <p>{movies.overview}</p>
+            <button
+              className="watchlist-btn"
+              onClick={() => removeMovieFromWatchList(movies.id)}
+            >
+              Remove From watchlist
+            </button>
           </div>
         </div>
       ))}
