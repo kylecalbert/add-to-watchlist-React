@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div>
-      <header className="header">
-        <ul className="nav-links">
+      <nav>
+        <ul>
           <li>
             <Link className="links" to="/">
               Featured
@@ -18,7 +18,7 @@ function Header() {
             </Link>
           </li>
         </ul>
-      </header>
+      </nav>
     </div>
   );
 }
